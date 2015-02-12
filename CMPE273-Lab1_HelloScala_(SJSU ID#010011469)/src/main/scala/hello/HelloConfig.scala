@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot;
 import org.springframework.web.bind.annotation.RequestMapping; 
 import org.springframework.web.bind.annotation.ResponseBody; 
+import org.springframework.web.bind.annotation.RequestMethod; 
 import org.springframework.stereotype.Controller; 
 import java.io._
 
@@ -20,7 +21,7 @@ import java.io._
 @EnableAutoConfiguration
 @ComponentScan
 class HelloConfig {
-	@RequestMapping(Array("/"))
+	@RequestMapping(value=Array("/"), method=Array(RequestMethod.GET))
 	@ResponseBody
 	def home(): String = {
 	println("HELLO WORLD!")
